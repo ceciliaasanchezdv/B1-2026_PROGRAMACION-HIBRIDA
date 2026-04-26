@@ -5,7 +5,9 @@
 </ion-card-header>
 
   <ion-card-content>
+    <ion-text>
     <p>El perímetro de un círculo es la longitud de la línea que forma su borde.</p>
+    </ion-text>
     <ion-img src="assets/circulo.png"></ion-img>
 
     <ion-item>
@@ -19,10 +21,10 @@
     <ion-button expand="block" (click)="calcular()">
       Calcular perímetro
     </ion-button>
-
+    
+    <ion-text>
     <p class="resultado" *ngIf="resultado !== null">
-      El perímetro es {{ resultado | number:'1.2-2' }} cm
-    </p>
+      El perímetro es {{ resultado | number:'1.2-2' }} cm</p>
+    </ion-text>
   </ion-card-content>
 </ion-card>
-
