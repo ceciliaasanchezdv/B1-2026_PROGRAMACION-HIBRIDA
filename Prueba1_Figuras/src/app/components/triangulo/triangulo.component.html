@@ -5,8 +5,10 @@
   </ion-card-header>
 
   <ion-card-content>
+    <ion-text>
     <p>El perímetro de un triángulo es la suma de las longitudes 
     de sus tres lados.</p>
+    </ion-text>
     <ion-img src="assets/triangulo.png"></ion-img>
 
     <ion-item>
@@ -30,9 +32,10 @@
       Calcular el Perímetro
     </ion-button>
 
+    <ion-text>
     <p class="resultado" *ngIf="resultado !== null">
-      El perímetro es {{ resultado }} cm
-    </p>
+      El perímetro es {{ resultado }} cm</p>
+      </ion-text>
 
   </ion-card-content>
 </ion-card>
