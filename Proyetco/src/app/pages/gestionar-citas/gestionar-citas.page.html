@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+     <!-- Flecha de volver -->
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <img src="assets/icon/flecha.png" class="btn-volver">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Gestión de citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Formulario -->
+  <div class="formulario">
+
+    <div class="titulo-formulario">
+     Crea una nueva cita
+    </div>
+
+  <!-- Campo para escribir la frase -->
+  <ion-item>
+    <ion-label position="stacked">Cita</ion-label>
+    <ion-input [(ngModel)]="nuevaFrase"></ion-input>
+  </ion-item>
+
+  <!-- Mensaje de error para la cita -->
+  <p class="mensaje-error" *ngIf="errorFrase">
+     {{ errorFrase }}
+  </p>
+
+  <!-- Campo para escribir el autor -->
+  <ion-item>
+    <ion-label position="stacked">Autor</ion-label>
+    <ion-input [(ngModel)]="nuevoAutor"></ion-input>
+  </ion-item>
+
+  <!-- Mensaje de error para el autor -->
+  <p class="mensaje-error" *ngIf="errorAutor">
+  {{ errorAutor }}
+  </p>
+
+  <!-- Botón para agregar la cita -->
+  <ion-button fill="clear" (click)="agregarCita()" class="btn-agregar">
+    Agregar +
+  </ion-button>
+ </div>
+
+  <!-- Lista de citas guardadas -->
+  <div *ngFor="let cita of citas" class="item-cita">
+    <!-- Contenedor horizontal -->
+    <div class="fila-cita">
+    <!-- Reutiliza el componente cita, con botón eliminar habilitado -->
+    
+    <app-cita [cita]="cita" 
+    [mostrarbtnEliminar]="true" 
+    (eliminar)="eliminarCita($event)">
+    </app-cita>
+
+    </div>
+ </div>
+</ion-content>

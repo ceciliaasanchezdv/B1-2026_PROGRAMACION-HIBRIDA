@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Citas</ion-title>
+
+    <!-- Botón para ir a configuración -->
+    <ion-buttons slot="end">
+      <ion-button routerLink="/configuracion">
+        <!-- Imagen del engranaje -->
+       <img src="assets/icon/settings.jpg" class="icono-settings">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Muestra la cita aleatoria; pasa configuración de borrado desde el padre -->
+  <app-cita *ngIf="citaActual" [cita]="citaActual" [mostrarbtnEliminar]="puedeEliminar"
+    (eliminar)="onEliminarCita($event)">
+  </app-cita>
+
+  <!-- Botón para refrescar la cita aleatoria -->
+  <ion-button expand="block" (click)="nuevaCita()" class="btn-nueva">
+    Nueva cita
+  </ion-button>
+
+  <!-- Botón para ir a gestionar citas -->
+  <ion-button expand="block" routerLink="/gestionar-citas" class="btn-gestionar">
+    Gestionar citas
+  </ion-button>
+
+</ion-content>
