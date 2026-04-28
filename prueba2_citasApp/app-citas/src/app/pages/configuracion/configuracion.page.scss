@@ -1,0 +1,24 @@
+.btn-volver{
+  width: 40px;
+  height: 35px;
+}
+
+ion-content {
+  --background: #e5e5e5;
+}
+
+ion-item {
+  color: black;
+  --background: rgba(255, 255, 255, 0.527);
+  margin: 15px;
+  border-radius: 6px;
+  border-color: gray;
+}
+
+ion-toggle {
+  --track-background: #cfcfcf;
+  --track-background-checked: #1688e6;
+
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}

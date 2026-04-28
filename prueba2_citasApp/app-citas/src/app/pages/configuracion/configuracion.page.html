@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+     <!-- Flecha de volver -->
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">
+        <img src="assets/icon/flecha.png" class="btn-volver">
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Interruptor para activar o desactivar -->
+  <ion-item lines="none">
+    <ion-label>
+      ¿Desea poder borrar citas en el inicio?
+    </ion-label>
+
+    <!-- Toggle conectado a la variable permitirBorrarInicio -->
+    <ion-toggle [(ngModel)]="permitirBorrarInicio" (ionChange)="guardarConfiguracion()"></ion-toggle>
+  </ion-item>
+
+</ion-content>

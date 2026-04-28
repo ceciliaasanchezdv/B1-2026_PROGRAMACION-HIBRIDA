@@ -1,0 +1,24 @@
+<!-- Tarjeta de Ionic para mostrar la cita -->
+<ion-card>
+  <ion-card-content>
+
+    <!-- Muestra la frase de la cita -->
+    <ion-text>
+    <p class="frase">{{ cita.frase }}</p>
+    </ion-text>
+
+    <!-- Muestra el autor en negrita -->
+    <ion-text>
+    <p class="autor"><strong>{{ cita.autor }}</strong></p>
+    </ion-text>
+
+    <!-- *ngIf está deprecated. Use @If en vez de *ngIf debido a que es la directiva nueva -->
+    <!--Solo aparece si el padre lo permite -->
+     @if (mostrarbtnEliminar) {
+    <ion-button color="danger" fill="clear" (click)="eliminarCita()">
+       <img src="assets/icon/trash.png" class="icono-trash">
+    </ion-button>
+    }
+
+  </ion-card-content>
+</ion-card>
