@@ -1,0 +1,21 @@
+<div class="zona-foto">
+  <ion-button size="small" (click)="tomarFoto()">
+    TOMAR FOTO
+  </ion-button>
+
+  <ion-button size="small" (click)="seleccionarFoto()">
+    SELECCIONAR FOTO
+  </ion-button>
+</div>
+
+<input #inputFoto type="file" accept="image/*" hidden (change)="cargarFoto($event)" />
+
+<input #inputCamara type="file" accept="image/*" capture="environment" hidden (change)="cargarFoto($event)" />
+
+<div class="contenedor-preview" *ngIf="foto">
+  <ion-button class="btn-quitar-foto" (click)="quitarFoto()">
+    ×
+  </ion-button>
+
+  <ion-img class="preview" [src]="foto" alt="Foto seleccionada"></ion-img>
+</div>

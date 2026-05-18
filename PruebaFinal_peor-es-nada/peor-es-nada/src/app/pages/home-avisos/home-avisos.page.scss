@@ -1,0 +1,41 @@
+.pantalla {
+  background: white;
+  color: black;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+.titulo {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.titulo h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.boton-agregar {
+  position: fixed;
+  color: white;
+  bottom: 25px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  font-size: 28px;
+  border-radius: 50%;
+}
+
+.boton-borrar {
+  color: blue;
+}
+
+.cargando {
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}

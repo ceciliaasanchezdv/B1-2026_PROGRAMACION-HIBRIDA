@@ -1,0 +1,10 @@
+<ion-text *ngIf="avisos.length === 0" class="mensaje-vacio">
+  <p>No hay avisos publicados.</p>
+</ion-text>
+
+<ion-list *ngIf="avisos.length > 0">
+  <ion-item lines="full" *ngFor="let aviso of avisos">
+    <app-aviso-card class="aviso-card-item" [aviso]="aviso" (eliminar)="eliminarAviso($event)">
+    </app-aviso-card>
+  </ion-item>
+</ion-list>

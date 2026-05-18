@@ -1,0 +1,35 @@
+<div class="pantalla">
+  <div class="barra">
+    <ion-button class="volver" (click)="volver()">←</ion-button>
+    <h2>Publicación</h2>
+  </div>
+
+  <div class="formulario">
+    <label>Título</label>
+
+    <ion-input [(ngModel)]="titulo" placeholder="Ej: Mascota perdida"></ion-input>
+
+    <ion-text *ngIf="formularioEnviado && tituloInvalido()">
+      <p class="error">El título debe tener mínimo 5 caracteres.</p>
+    </ion-text>
+
+    <app-foto-aviso [foto]="foto" (fotoCambiada)="recibirFoto($event)">
+    </app-foto-aviso>
+
+    <ion-text *ngIf="formularioEnviado && fotoInvalida()">
+      <p class="error">Debes seleccionar o tomar una fotografía.</p>
+    </ion-text>
+
+    <label>Descripción</label>
+
+    <ion-textarea [(ngModel)]="descripcion" placeholder="Escribe los detalles del aviso"></ion-textarea>
+
+    <ion-text *ngIf="formularioEnviado && descripcionInvalida()">
+      <p class="error">La descripción debe tener mínimo 20 caracteres.</p>
+    </ion-text>
+
+    <ion-button class="btn-guardar" type="button" (click)="guardarAviso()">
+      GUARDAR
+    </ion-button>
+  </div>
+</div>

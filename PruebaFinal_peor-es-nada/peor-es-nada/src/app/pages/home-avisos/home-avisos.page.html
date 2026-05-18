@@ -1,0 +1,19 @@
+<div class="pantalla">
+  <div class="titulo">
+    <h2>Publicaciones</h2>
+  </div>
+
+  <p class="cargando" *ngIf="cargando">
+    Cargando publicaciones...
+  </p>
+
+  <app-lista-avisos *ngIf="!cargando" [avisos]="avisos" (eliminar)="eliminarAviso($event)">
+  </app-lista-avisos>
+
+  <ion-button class="boton-agregar" (click)="irCrearAviso()">
+    +
+  </ion-button>
+
+  <app-modal-confirmar *ngIf="mostrarModal" (cancelar)="cancelarEliminacion()" (confirmar)="confirmarEliminacion()">
+  </app-modal-confirmar>
+</div>

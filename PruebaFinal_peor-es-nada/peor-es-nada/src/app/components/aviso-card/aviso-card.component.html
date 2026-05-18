@@ -1,0 +1,14 @@
+<div class="fila-aviso">
+  <ion-img class="foto" [src]="aviso.foto" alt="Foto del aviso">
+  </ion-img>
+
+  <div class="datos">
+    <h3>{{ aviso.titulo }}</h3>
+    <p>{{ aviso.descripcion }}</p>
+    <p>{{ aviso.fecha | date: 'dd/MM/yyyy' }}</p>
+  </div>
+
+  <ion-button fill="clear" color="primary" (click)="eliminarAviso()">
+    🗑
+  </ion-button>
+</div>
